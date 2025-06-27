@@ -4,6 +4,17 @@
   --card-bg: wheat;
   --card-text: #000;
   --button-hover-bg: rgba(0,0,0,0.05);
+  width: 100%;
+  max-width: 250px;
+  display: block;
+  
+  @include xs-only {
+    max-width: 220px;
+  }
+  
+  @include tablet-up {
+    width: auto;
+  }
 }
 
 :host.dark-theme {
@@ -13,25 +24,34 @@
 }
 
 .displaycard {
-  height: 300px;
-  width: 250px;
+  height: 250px;
+  width: 100%;
   background-color: var(--card-bg);
   color: var(--card-text);
-  border-radius: 15px;
+  border-radius: 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 15px;
+  padding: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  
+  @include xs-only {
+    height: 220px;
+    padding: 10px;
+    border-radius: 10px;
+  }
   
   @include tablet-up {
-    height: 350px;
-    width: 280px;
-    padding: 20px;
+    height: 300px;
+    width: 250px;
+    padding: 15px;
+    border-radius: 15px;
   }
   
   @include desktop-up {
     height: 400px;
     width: 300px;
+    padding: 20px;
   }
 }
 
@@ -44,24 +64,28 @@
 .action-button {
   background: transparent;
   border: none;
-  font-size: 2em;
   cursor: pointer;
-  padding: 5px;
+  padding: 3px;
   margin: 0;
-  border-radius: 25px;
+  border-radius: 20px;
   
   img {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
+    
+    @include xs-only {
+      width: 22px;
+      height: 22px;
+    }
     
     @include tablet-up {
-      width: 35px;
-      height: 35px;
+      width: 28px;
+      height: 28px;
     }
     
     @include desktop-up {
-      width: 40px;
-      height: 40px;
+      width: 35px;
+      height: 35px;
     }
   }
 }
@@ -72,16 +96,25 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  padding: 0 5px;
+  
+  @include tablet-up {
+    padding: 0 10px;
+  }
 }
 
 .text-box p {
   margin: 0;
-  font-size: 1.4em;
+  font-size: 1.2em;
   font-weight: 700;
   text-align: center;
   
+  @include xs-only {
+    font-size: 1.1em;
+  }
+  
   @include tablet-up {
-    font-size: 1.7em;
+    font-size: 1.4em;
   }
   
   @include desktop-up {

@@ -14,6 +14,12 @@ $breakpoint-lg: 992px;
 $breakpoint-xl: 1200px;
 
 // Mixins para media queries
+@mixin xs-only {
+  @media (max-width: #{$breakpoint-sm - 1px}) {
+    @content;
+  }
+}
+
 @mixin mobile-only {
   @media (max-width: #{$breakpoint-md - 1px}) {
     @content;
@@ -36,11 +42,17 @@ html, body {
   height: 100%;
   width: 100%;
   overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 // Ajuste de fonte base para dispositivos móveis
 html {
-  font-size: 14px;
+  font-size: 12px;
+  
+  @include xs-only {
+    font-size: 14px;
+  }
   
   @include tablet-up {
     font-size: 16px;
@@ -58,6 +70,28 @@ html {
 .hide-on-desktop {
   @include desktop-up {
     display: none !important;
+  }
+}
+
+// Classe para container com padding responsivo
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  
+  @include xs-only {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+  
+  @include tablet-up {
+    max-width: 720px;
+  }
+  
+  @include desktop-up {
+    max-width: 960px;
   }
 }
 
