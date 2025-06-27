@@ -6,3 +6,58 @@
   box-sizing: border-box;
 }
 
+// Breakpoints para design responsivo
+$breakpoint-xs: 0;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// Mixins para media queries
+@mixin mobile-only {
+  @media (max-width: #{$breakpoint-md - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet-up {
+  @media (min-width: #{$breakpoint-md}) {
+    @content;
+  }
+}
+
+@mixin desktop-up {
+  @media (min-width: #{$breakpoint-lg}) {
+    @content;
+  }
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+// Ajuste de fonte base para dispositivos móveis
+html {
+  font-size: 14px;
+  
+  @include tablet-up {
+    font-size: 16px;
+  }
+}
+
+// Classe utilitária para elementos que devem ser escondidos em dispositivos móveis
+.hide-on-mobile {
+  @include mobile-only {
+    display: none !important;
+  }
+}
+
+// Classe utilitária para elementos que devem ser escondidos em desktop
+.hide-on-desktop {
+  @include desktop-up {
+    display: none !important;
+  }
+}
+

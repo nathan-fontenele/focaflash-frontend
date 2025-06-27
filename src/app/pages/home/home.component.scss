@@ -1,4 +1,5 @@
 @import "https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap";
+@import "../../../styles.scss";
 
 body {
   background-color: #161616;
@@ -42,16 +43,41 @@ body {
 header{
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  padding: 30px 0;
+  padding: 20px 15px;
   background-color: transparent;
-  margin-bottom: 15em;
+  margin-bottom: 4em;
+  
+  @include tablet-up {
+    padding: 30px 40px;
+    margin-bottom: 8em;
+  }
+  
+  @include desktop-up {
+    justify-content: space-around;
+    margin-bottom: 15em;
+  }
+  
+  .logo {
+    img {
+      height: auto;
+      width: 140px;
+      
+      @include tablet-up {
+        width: 184px;
+      }
+    }
+  }
 }
 
 #login-btn{
-  margin-right: 20px;
+  margin-right: 10px;
   background-color: transparent;
+  
+  @include tablet-up {
+    margin-right: 20px;
+  }
 }
 
 #signup-btn{
@@ -61,15 +87,23 @@ header{
   color: #f1f1f1;
   cursor: pointer;
   font-family: Poppins;
-  padding: 10px 30px;
+  padding: 8px 15px;
   text-decoration: none;
   display: inline-block;
   text-align: center;
+  font-size: 0.9rem;
+  
+  @include tablet-up {
+    padding: 10px 30px;
+    font-size: 1rem;
+  }
 }
 
 #signup-btn:hover{
-  padding: 15px 35px;
-  transition: padding .3s ease-out;
+  @include tablet-up {
+    padding: 15px 35px;
+    transition: padding .3s ease-out;
+  }
 }
 
 button{
@@ -78,7 +112,13 @@ button{
   color: #f1f1f1;
   cursor: pointer;
   font-family: Poppins;
-  padding: 10px 30px;
+  padding: 8px 15px;
+  font-size: 0.9rem;
+  
+  @include tablet-up {
+    padding: 10px 30px;
+    font-size: 1rem;
+  }
 }
 
 .main-page{
@@ -90,35 +130,73 @@ button{
   align-items: center;
   font-family: Poppins;
   justify-content: center;
+  padding: 0 15px;
+  
+  @include tablet-up {
+    padding: 0 40px;
+  }
 
   .main-section{
     text-align: center;
     display: flex;
     flex-direction: column;
-    margin-bottom: 15em;
+    margin-bottom: 5em;
     align-items: center;
     justify-content: center;
-    gap: 30px;
+    gap: 20px;
     z-index: 1;
     position: relative;
+    
+    @include tablet-up {
+      gap: 30px;
+      margin-bottom: 10em;
+    }
+    
+    @include desktop-up {
+      margin-bottom: 15em;
+    }
 
     h1{
       color: white;
-      font-size: 5rem;
-      padding: 0 90px;
+      font-size: 2rem;
+      padding: 0 10px;
       margin: 0;
+      
+      @include tablet-up {
+        font-size: 3.5rem;
+        padding: 0 40px;
+      }
+      
+      @include desktop-up {
+        font-size: 5rem;
+        padding: 0 90px;
+      }
+      
       strong{
         background: linear-gradient(90deg,rgba(130, 232, 118, 1) 0%, rgba(53, 115, 20, 1) 100%);
-        padding: 10px 20px;
-        border-radius: 20px;
+        padding: 5px 10px;
+        border-radius: 10px;
+        
+        @include tablet-up {
+          padding: 10px 20px;
+          border-radius: 20px;
+        }
       }
     }
 
     h2 {
       color: #FF6265;
-      font-size: 2rem;
+      font-size: 1.2rem;
       margin: 0;
       font-weight: 500;
+      
+      @include tablet-up {
+        font-size: 1.5rem;
+      }
+      
+      @include desktop-up {
+        font-size: 2rem;
+      }
     }
     
     .typewriter-container {
@@ -149,34 +227,76 @@ button{
 
   .features-section{
     display: flex;
-    flex-direction: row;
-    gap: 40px;
-    flex-wrap: wrap;
-    width: 80%;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
     justify-content: center;
     align-items: center;
-    margin-bottom: 15em;
+    margin-bottom: 5em;
+    
+    @include tablet-up {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 30px;
+      width: 90%;
+      margin-bottom: 10em;
+    }
+    
+    @include desktop-up {
+      gap: 40px;
+      width: 80%;
+      margin-bottom: 15em;
+    }
   }
 
  .flashcard-display{
   display: flex;
-  flex-direction: row;
-  gap: 50px;
-  margin-bottom: 15em;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 5em;
+  
+  @include tablet-up {
+    flex-direction: row;
+    gap: 40px;
+    margin-bottom: 10em;
+  }
+  
+  @include desktop-up {
+    gap: 50px;
+    margin-bottom: 15em;
+  }
  }
 
  .wishlist{
   width: 100%;
-  margin-bottom: 15em;
+  margin-bottom: 5em;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  
+  @include tablet-up {
+    margin-bottom: 10em;
+  }
+  
+  @include desktop-up {
+    margin-bottom: 15em;
+  }
 
   p{
     color: white;
-    font-size: 1.4em;
+    font-size: 1.1em;
     margin-bottom: 15px;
+    text-align: center;
+    padding: 0 20px;
+    
+    @include tablet-up {
+      font-size: 1.2em;
+    }
+    
+    @include desktop-up {
+      font-size: 1.4em;
+    }
   }
  }
 }

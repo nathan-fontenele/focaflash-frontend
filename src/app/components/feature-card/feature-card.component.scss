@@ -1,26 +1,81 @@
+@import "../../../styles.scss";
+
 .feature-card{
   background-color: #161616;
-  border-radius: 20px;
+  border-radius: 15px;
   box-shadow: 2px 2px 0px 1px rgba(255, 255, 255, 1);
-  height: 250px;
-  width: 380px;
+  width: 100%;
+  min-height: 150px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 15px;
+  
+  @include tablet-up {
+    border-radius: 20px;
+    height: 220px;
+    width: 320px;
+    padding: 20px;
+  }
+  
+  @include desktop-up {
+    height: 250px;
+    width: 380px;
+  }
+}
+
+.icon {
   display: flex;
   justify-content: center;
-  padding: 20px;
+  align-items: center;
+  
+  img {
+    width: 40px;
+    height: 40px;
+    
+    @include tablet-up {
+      width: 50px;
+      height: 50px;
+    }
+  }
 }
 
 .text-card{
-  margin-left: 20px;
+  margin-left: 15px;
+  
+  @include tablet-up {
+    margin-left: 20px;
+  }
 }
 
-h1{
+h2{
   color: #FF6265;
   font-family: Poppins;
   font-weight: 700;
+  font-size: 1.1rem;
+  margin: 0;
+  
+  @include tablet-up {
+    font-size: 1.3rem;
+  }
+  
+  @include desktop-up {
+    font-size: 1.5rem;
+  }
 }
 
 p{
   color: white;
   font-family: Poppins;
-  margin-top: 20px;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  
+  @include tablet-up {
+    margin-top: 15px;
+    font-size: 1rem;
+  }
+  
+  @include desktop-up {
+    margin-top: 20px;
+  }
 }
