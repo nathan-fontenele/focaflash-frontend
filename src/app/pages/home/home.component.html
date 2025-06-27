@@ -1,0 +1,71 @@
+<body>
+  <header>
+    <div class="logo">
+      <img ngSrc="/asserts/img/logo.png" priority height="44" width="184"/>
+    </div>
+
+    <div class="action-buttons">
+        <button id="login-btn">Login</button>
+        <a id="signup-btn" [routerLink]="['/signup']">Cadastre-se</a>
+    </div>
+  </header>
+
+  <main class="main-page">
+
+    <section class="main-section">
+      <h1>App de flashcard <strong>gratuito</strong> para estudar com foco.</h1>
+      <div class="typewriter-container">
+        <h2 class="typewriter">Plataforma simples para montar e revisar do seu jeito, sem pagar nada.</h2>
+      </div>
+    </section>
+
+    <section class="wishlist">
+      <p>Entre na lista de espera e seja avisado do lançamento.</p>
+      <app-wishlist-form (submitted)="handleWishlist($event.email)"></app-wishlist-form>
+    </section>
+
+    <section class="features-section">
+      <app-feature-card
+        [title]="'Criação rápida de flashcards'"
+        [description]="'Crie flashcards em poucos cliques, com textos frente e verso. Organize seus estudos com praticidade, sem complicações.'"
+        [iconPath]="'/asserts/icons/add-notes-icon.svg'"/>
+
+        <app-feature-card
+        [title]="'Personalização de conteúdo'"
+        [description]="'Escola cores, categorias, e adicione imagens ou emojis para deixar seus cards com a sua cara e mais fáceis de memorizar.'"
+        [iconPath]="'/asserts/icons/palette-icon.svg'"/>
+
+        <app-feature-card
+        [title]="'Organização por pastas ou tópicos'"
+        [description]="'Agrupe seus flashcards por matéria, disciplina ou tema. Encontre o que precisa com rapidez e mantenha tudo em ordem.'"
+        [iconPath]="'/asserts/icons/folder-open-icon.svg'"/>
+
+        <app-feature-card
+        [title]="'Busca rápida e filtros'"
+        [description]="'Encontre qualquer flash card com facilidade usando a busca por palavra-chave e filtros por tags ou categorias.'"
+        [iconPath]="'/asserts/icons/category-search-icon.svg'"/>
+
+        <app-feature-card
+        [title]="'Revisões agendadas'"
+        [description]="'Agende revisões para não esquecer nada. Aprenda com a frequência certa e mantenha seu aprendizado em dia.'"
+        [iconPath]="'/asserts/icons/calendar-icon.svg'"/>
+
+         <app-feature-card
+        [title]="'Acesso online e gratuito'"
+        [description]="'Acesse seus flashcards de qualquer lugar, direto do navegador - sem pagar nada e sem precisar instalar.'"
+        [iconPath]="'/asserts/icons/money-off-icon.svg'"/>
+    </section>
+
+    <section class="flashcard-display">
+      <app-display-card
+      theme="light"
+      [content]="'Qual a fórmula química da água?'"
+      />
+
+      <app-display-card
+      theme="dark"
+      [content]="'H2O'"
+      />
+    </section>
+  </main>
+</body>

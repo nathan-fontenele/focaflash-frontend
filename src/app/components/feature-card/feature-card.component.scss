@@ -1,0 +1,26 @@
+.feature-card{
+  background-color: #161616;
+  border-radius: 20px;
+  box-shadow: 2px 2px 0px 1px rgba(255, 255, 255, 1);
+  height: 250px;
+  width: 380px;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.text-card{
+  margin-left: 20px;
+}
+
+h1{
+  color: #FF6265;
+  font-family: Poppins;
+  font-weight: 700;
+}
+
+p{
+  color: white;
+  font-family: Poppins;
+  margin-top: 20px;
+}

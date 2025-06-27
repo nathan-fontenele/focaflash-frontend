@@ -1,0 +1,11 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="wishlist-form">
+  <div class="field">
+    <input id="email" formControlName="email" placeholder="seu@exemplo.com" />
+    <small *ngIf="form.get('email')?.touched && form.get('email')?.invalid">
+      <span *ngIf="form.get('email')?.errors?.['required']">Email é obrigatório.</span>
+      <span *ngIf="form.get('email')?.errors?.['email']">Formato de email inválido.</span>
+    </small>
+  </div>
+
+  <button type="submit" [disabled]="form.invalid">Enviar</button>
+</form>

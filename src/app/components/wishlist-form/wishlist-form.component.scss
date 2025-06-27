@@ -1,0 +1,46 @@
+.wishlist-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: transparent;
+
+}
+
+.field {
+  display: flex;
+  flex-direction: row;
+}
+
+input {
+  padding: 0.5rem;
+  border: none;
+  width: 30rem;
+  border-radius: 10px 0 0 10px;
+  font-size: 14px;
+}
+
+small {
+  color: #e53935;
+  margin-top: 0.25rem;
+}
+
+button {
+  border: none;
+  background: linear-gradient(220deg,rgba(13, 28, 87, 0.23) 0%, rgba(58, 52, 230, 0.23) 100%);
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 10rem;
+  border-radius: 0 10px 10px 0;
+  box-shadow: 0px 0px 25px #3A34E6;
+  backdrop-filter: blur(4.8px);
+  -webkit-backdrop-filter: blur(4.8px);
+}
+
+input, button{
+  height: 50px;
+}
+
+input:active{
+  border: none;
+}
